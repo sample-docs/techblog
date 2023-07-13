@@ -1,5 +1,11 @@
 site_name: Tech Blog
 #docs_dir: docs/
+site_url: https://morai-techblog.github.io/
+
+repo_url: https://github.com/morai-techblog/morai-techblog.github.io
+edit_uri: blob/main/docs/
+
+
 theme:
   name: material
   # custom_dir: material/.overrides
