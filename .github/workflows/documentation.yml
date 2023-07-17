@@ -1,4 +1,3 @@
-
 name: Check korean grammar on pull request comment
 
 on: [pull_request]
