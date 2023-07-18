@@ -1,0 +1,21 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% extends "base.html" %}
+{% block extrahead %}
+  <link rel="stylesheet" href="{{ 'assets/stylesheets/custom.css' | url }}">
+{% endblock %}
+
+{% block announce %}
+  {{ super() }}
+  <script src="{{ 'assets/javascripts/custom.js' | url }}"></script>
+  Join MORAI Tech Group,
+  <a rel="me" href="https://www.morai.ai/career" target="_blank">
+    Go to MORAI 인재 채용
+  </a>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="{{ 'assets/javascripts/custom.js' | url }}"></script>
+{% endblock %}

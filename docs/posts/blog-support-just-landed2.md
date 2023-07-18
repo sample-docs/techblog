@@ -1,6 +1,6 @@
 ---
 date: 2023-09-12
-# authors: [squidfunk]
+authors: [EJ]
 description: >
   Our new blog is built with the brand new built-in blog plugin. You can build
   a blog alongside your documentation or standalone
@@ -11,9 +11,10 @@ links:
 
 comments: true
 
+title: Blog support just landed
+
 ---
 
-# Blog support just landed
 
 __Hey there! You're looking at our new blog, built with the brand new
 [built-in blog plugin]. With this plugin, you can easily build a blog alongside
