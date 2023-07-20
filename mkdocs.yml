@@ -49,7 +49,8 @@ plugins:
   - blog:
       blog_dir: .
       # blog_toc: true
-  - search
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - tags:
       tags_file: tags.md
   - minify:
@@ -119,6 +120,7 @@ nav:
   - Home: index.md
 
 extra_css: 
+  - css/extra.css
   - css/_typeset.scss
 
 

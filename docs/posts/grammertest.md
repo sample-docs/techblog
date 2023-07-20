@@ -3,15 +3,14 @@ date: 2023-07-14
 authors: [EJ]
 description: Github Action의 자동 맞춤범 검사기를 도입하여 개발자가 초안을 빠르게 수정하기
 categories:
-  - Process
+  - Use Cases
 tags:
   - Foo
   - Bar
 cover_image: post_230714.png
-title: TEST
-draft: true
+title: (샘플 글입니다) 맞춤법 자동검사 도입기 feat. 마크다운 사용법
+# draft: true
 comments: true
-
 ---
 
 # 제목: TEST
@@ -44,7 +43,6 @@ comments: true
 - 버츄얼
 
 ## 맞춤법 오류 추가1
-![grammertest/index_testimage1.png](grammertest/index_testimage1.png)
 
 - 썸네일
 - 버젼
@@ -75,14 +73,14 @@ comments: true
 - 쉘 -> 셸
 - 버츄얼 -> 버추얼
   
+---
 
-#### 맞춤법 오류 추가 3
 
-안내사항
+#### 안내사항
 ???+ note
     Capture Mode는 센서 설정 파라미터로 **GT** 및 **Intensity Type** 을 지원하는 카메라 및 라이다 센서에서만 사용할 수 있습니다.
 
-코드 블록
+#### 코드 블록
 ``` yaml
 site_name: My Blog
 theme:
@@ -92,28 +90,28 @@ theme:
 plugins:
   - meta
   - blog:
-      blog_dir: . # (1)!
+      blog_dir: . 
   - search
   - tags
 nav:
   - index.md
 ```
 
-일반 설명 블록 <br>
+#### 일반 설명 블록 
 To use multiple sensors in MORAI SIM: Air, the system specifications below should be satisfied.
 >  CPU: Intel i7 or higher <br>
   RAM: 32GB  or higher <br>
 >  VGA: RTX 30 series or higher
 >
 
-일반 설명 블록 리스트<br>
+#### 리스트형 일반 설명 블록 
 To use multiple sensors in MORAI SIM: Air, the system specifications below should be satisfied.
 > - CPU: Intel i7 or higher <br>
   - RAM: 32GB  or higher <br>
 > - VGA: RTX 30 series or higher
 
 
-두 개 이상 열 리스트
+#### 두 개 이상 열 리스트
 <div class="mdx-columns" markdown>
 
 - [Adding an excerpt]
@@ -126,10 +124,6 @@ To use multiple sensors in MORAI SIM: Air, the system specifications below shoul
 - [Setting defaults]
 
 </div>
-
-Additionally, the [built-in blog plugin] has dozens of [configuration options]
-which allow for fine-tuning the output. You can configure post slugs, general
-behavior and much more.
 
   [exact same Markdown flavor]: ../../reference/index.md
   [post slugs]: ../../setup/setting-up-a-blog.md#+blog.post_url_format
@@ -149,3 +143,41 @@ behavior and much more.
   [Setting the reading time]: ../../setup/setting-up-a-blog.md#setting-the-reading-time
   [Setting defaults]: ../../setup/setting-up-a-blog.md#setting-defaults
   [configuration options]: ../../setup/setting-up-a-blog.md#configuration
+
+#### 번호형 리스트
+
+1.  [Subscribe to a monthly sponsorship]
+2.  [Create a personal access token]
+3.  [Install Insiders]
+
+#### 주석형 코드 블록
+Now that we have set up the [built-in blog plugin], we can start writing our
+first post. All blog posts are written with the [exact same Markdown flavor] as
+already included with Material for MkDocs. First, create a folder called `posts`
+with a file called `hello-world.md`:
+
+``` { .sh .no-copy }
+.
+├─ docs/
+│  ├─ posts/
+│  │  └─ hello-world.md # (1)!
+│  └─ index.md
+└─ mkdocs.yml
+```
+
+1.  If you'd like to arrange posts differently, you're free to do so. The URLs
+    are built from the format specified in [`post_url_format`][post slugs] and
+    the titles and dates of posts, no matter how they are organized
+    inside the `posts` directory.
+
+Then, open up `hello-world.md`, and add the following lines:
+
+``` yaml
+---
+draft: true # (1)!
+date: 2022-01-31
+categories:
+  - Hello
+  - World
+---
+```
