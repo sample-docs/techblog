@@ -16,6 +16,7 @@ comments: true
 # 제목: TEST
 안녕하세요. OOO에서 OO을 하고 있는 OOO 입니다.
 
+## TEST
 아래의 잘못된 맞춤법이 Github Action으로 고쳐졌을까요?
 
 - 써버
@@ -41,9 +42,6 @@ comments: true
 - 스케쥴
 - 쉘
 - 버츄얼
-
-## 맞춤법 오류 추가1
-
 - 썸네일
 - 버젼
 - 프로비젼
@@ -75,6 +73,7 @@ comments: true
   
 ---
 
+##  마크다운 사용법
 
 #### 안내사항
 ???+ note
