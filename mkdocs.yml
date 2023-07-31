@@ -43,30 +43,41 @@ theme:
   icon:
     logo: logo
 
-# Plugins
+# # Plugins
+# plugins:
+#   - meta
+#   - blog:
+#       blog_dir: .
+#       # blog_toc: true
+#       archive: false
+#   - search
+#  #     separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+#   - tags:
+#       tags_file: tags.md
+#   #- minify:
+#   #    minify_html: true
+#   - rss:
+#       match_path: posts/.* 
+#       date_from_meta:
+#         as_creation: date
+#       categories:
+#         - categories
+#         - tags
+#    - typeset
+
 plugins:
   - meta
   - blog:
       blog_dir: .
-      # blog_toc: true
-      archive: false
-  - search:
- #     separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      archive: false 
+  - search
   - tags:
       tags_file: tags.md
-  - minify:
-      minify_html: true
-  - rss:
-      match_path: posts/.* 
-      date_from_meta:
-        as_creation: date
-      categories:
-        - categories
-        - tags
+  - typeset
 
 # Hooks
-hooks:
-  - overrides/hooks/translations.py
+# hooks:
+#   - overrides/hooks/translations.py
 
 # Customization
 extra:
@@ -91,7 +102,6 @@ markdown_extensions:
   - md_in_html
   - toc:
       permalink: true
-      
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -107,10 +117,6 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.keys
-  - pymdownx.magiclink:
-      repo_url_shorthand: true
-      user: squidfunk
-      repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences:
@@ -120,16 +126,18 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - tables
 
 nav:
   - Home: index.md
 
 extra_css: 
   - css/extra.css
-  - css/_typeset.scss
+#  - css/_typeset.scss
 
 

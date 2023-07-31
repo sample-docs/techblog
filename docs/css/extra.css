@@ -141,6 +141,12 @@ table pre {
   font-size: 20px;
 } */
 
+
+
 .md-nav__list > li .md-nav__link.md-nav__link--active .md-ellipsis {
+  font-size: 20px;
+}
+
+.md-nav__list > li .md-nav__link.md-nav__link--passed.md-nav__link--active .md-ellipsis {
   font-size: 20px;
 }

@@ -1,4 +1,4 @@
-# How to contribute to tech blog
+# How to contribute to Tech Blog
 
 이 가이드는 기고자가 직접 마크다운과 Material for MkDocs 라이브러리를 활용하여 테크 블로그에 기고하는 방법을 안내합니다.
 

@@ -9,7 +9,7 @@ tags:
   - Bar
 cover_image: post_230714.png
 title: (샘플 글입니다) 맞춤법 자동검사 도입기 feat. 마크다운 사용법
-# draft: true
+draft: true
 comments: true
 ---
 
@@ -180,3 +180,7 @@ categories:
   - World
 ---
 ```
+
+## 결론
+결론입니다.
+<BR>
