@@ -27,8 +27,17 @@
       {% if page.next_page %}
         <link rel="next" href="{{ page.next_page.url | url }}">
       {% endif %}
+      {% if config.extra.alternate is iterable %}
+        {% for alt in config.extra.alternate %}
+          <link rel="alternate" href="{{ alt.link | url }}" hreflang="{{ alt.lang | d(lang.t('language')) }}">
+        {% endfor %}
+      {% endif %}
+      {% if "rss" in config.plugins %}
+        <link rel="alternate" type="application/rss+xml" title="{{ lang.t('rss.created') }}" href="{{ 'feed_rss_created.xml' | url }}">
+        <link rel="alternate" type="application/rss+xml" title="{{ lang.t('rss.updated') }}" href="{{ 'feed_rss_updated.xml' | url }}">
+      {% endif %}
       <link rel="icon" href="{{ config.theme.favicon | url }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-9.1.5">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-9.1.20+insiders-4.37.0">
     {% endblock %}
     {% block htmltitle %}
       {% if page.meta and page.meta.title %}
@@ -40,18 +49,18 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.3a36e643.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.ecc776e4.min.css' | url }}">
       {% endif %}
       {% include "partials/icons.html" %}
     {% endblock %}
     {% block libs %}{% endblock %}
     {% block fonts %}
       {% if config.theme.font != false %}
-        {% set text = config.theme.font.text | d("Roboto", true) %}
-        {% set code = config.theme.font.code | d("Roboto Mono", true) %}
+        {% set text = config.theme.font.get("text", "Roboto") %}
+        {% set code = config.theme.font.get("code", "Roboto Mono") %}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{
             text | replace(' ', '+') + ':300,300i,400,400i,700,700i%7C' +
@@ -67,11 +76,6 @@
     {% block analytics %}
       {% include "partials/integrations/analytics.html" %}
     {% endblock %}
-    {% if page.meta and page.meta.meta %}
-      {% for tag in page.meta.meta %}
-        <meta {% for key, value in tag.items() %} {{ key }}="{{value}}" {% endfor %}>
-      {% endfor %}
-    {% endif %}
     {% block extrahead %}{% endblock %}
   </head>
   {% set direction = config.theme.direction or lang.t("direction") %}
@@ -81,16 +85,13 @@
       {% set palette = palette | first %}
     {% endif %}
     {% set scheme  = palette.scheme  | d("default", true) %}
-    {% set primary = palette.primary | d("", true) %}
-    {% set accent  = palette.accent  | d("", true) %}
+    {% set primary = palette.primary | d("indigo", true) %}
+    {% set accent  = palette.accent  | d("indigo", true) %}
     <body dir="{{ direction }}" data-md-color-scheme="{{ scheme | replace(' ', '-') }}" data-md-color-primary="{{ primary | replace(' ', '-') }}" data-md-color-accent="{{ accent | replace(' ', '-') }}">
   {% else %}
     <body dir="{{ direction }}">
   {% endif %}
     {% set features = config.theme.features or [] %}
-    {% if not config.theme.palette is mapping %}
-      {% include "partials/javascripts/palette.html" %}
-    {% endif %}
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -173,6 +174,9 @@
           {% endblock %}
           {% block container %}
             <div class="md-content" data-md-component="content">
+              {% if "navigation.path" in features %}
+                {% include "partials/path.html" %}
+              {% endif %}
               <article class="md-content__inner md-typeset">
                 {% block content %}
                   {% include "partials/content.html" %}
@@ -212,14 +216,13 @@
         "base": base_url,
         "features": features,
         "translations": {},
-        "search": "assets/javascripts/workers/search.js" | url
+        "search": "assets/javascripts/workers/search.6c7302c4.min.js" | url
       } -%}
-      {%- if config.extra.version -%}
-        {%- set _ = app.update({ "version": config.extra.version }) -%}
-      {%- endif -%}
-      {%- if config.extra.tags -%}
-        {%- set _ = app.update({ "tags": config.extra.tags }) -%}
-      {%- endif -%}
+      {%- for key in ["annotate", "tags", "version"] -%}
+        {%- if config.extra[key] -%}
+          {%- set _ = app.update({ key: config.extra[key] }) -%}
+        {%- endif -%}
+      {%- endfor -%}
       {%- set translations = app.translations -%}
       {%- for key in [
         "clipboard.copy",
@@ -240,9 +243,13 @@
       </script>
     {% endblock %}
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/bundle.js' | url }}"></script>
-      {% for path in config.extra_javascript %}
-        <script src="{{ path | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.7c5c0157.min.js' | url }}"></script>
+      {% for script in config.extra_javascript %}
+        {% if script.path %}
+          {{ script | script_tag }}
+        {% else %}
+          <script src="{{ script | url }}"></script>
+        {% endif %}
       {% endfor %}
     {% endblock %}
   </body>

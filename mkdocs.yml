@@ -21,6 +21,7 @@ theme:
     - content.action.view
     - content.code.annotate
     - content.code.copy
+    - content.code.select
     # - content.tabs.link
     - content.tooltips
     # - header.autohide
@@ -33,7 +34,7 @@ theme:
     - navigation.tabs
     # - navigation.tabs.sticky
     - navigation.top
-    - navigation.tracking
+    # - navigation.tracking
     - search.highlight
     - search.share
     - search.suggest
@@ -74,6 +75,8 @@ plugins:
   - tags:
       tags_file: tags.md
   - typeset
+  - info:
+      archive_stop_on_violation: false
 
 # Hooks
 # hooks:
