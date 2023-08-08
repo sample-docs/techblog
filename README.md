@@ -15,7 +15,7 @@ develop 브랜치를 기준으로 feature 브랜치 생성 후 초안 템플릿 
 
 ## Step 2: 기고자가 초안 작성 
 
-1. 문서 작업 환경 구성
+### 1. 문서 작업 환경 구성
 기고자의 로컬 환경에서 블로그와 동일한 사이트를 빌드하며 초안 작성을 할 수 있도록 아래 순서대로 작업 환경을 구성합니다.
 
 ```
@@ -27,20 +27,21 @@ pip install mkdocs-minify-plugin
 pip install mkdocs-rss-plugin
 ```
 
-2. 블로그 리포지터리 복사 
+### 2. 블로그 리포지터리 복사 
 
 `git clone --branch {feature branch} https://github.com/morai-techblog/morai-techblog.github.io.git`
 
-3. 초안 작성 
+### 3. 초안 작성
 초안 템플릿의 각 주요 항목에 대한 내용을 채운다는 개념으로 작성.  
-각 목차 및 단락 별 소주제에 맞는 내용을 작성하는 것이 중요함. 이에 필요한 캡처, 표, 그림을 최대한 활용하여 포함
+각 목차 및 단락 별 소주제에 맞는 내용을 작성하는 것이 중요함. 필요한 캡처, 표, 그림을 최대한 활용.
 
 초안 작성 후 1차 맞춤법 검사 --> [다음 맞춤법 검사기](https://alldic.daum.net/grammar_checker.do)
 
-4. 초안 확인
+### 4. 초안 확인
 `mkdocs serve`
   
-6. 초안 공유 - feature 브랜치 업데이트 
+### 5. 초안 공유 
+- feature 브랜치 업데이트 
 ```
 git add .
 git commit -am "초안 작성 완료"
