@@ -4,7 +4,7 @@
 
 안내 범위는 기획안을 바탕으로한 [초안 템플릿 생성](#step-1-tw가-초안-템플릿-생성)부터 [초안 배포](#4-초안-확인)까지이며, 전체적인 기술 블로그 운영 프로세스는 [여기](https://docs.google.com/presentation/d/1Vj2fPxkv4lRkNK6vzrvJKexuQG6UPk0zQDtRaMcP8vs/edit#slide=id.g25a55c4c35b_0_14)를 참고하세요.
 
-당신이 기고자인 경우, [Step 2](user-content-step-2-기고자가-초안-작성) 중심으로 확인하시기 바랍니다.
+당신이 기고자인 경우, [Step 2](#step-2-기고자가-초안-작성) 중심으로 확인하시기 바랍니다.
 
 <br>
 
