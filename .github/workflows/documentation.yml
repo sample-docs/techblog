@@ -8,13 +8,14 @@ on:
 
 jobs:
   grammar_check_general:
+    if: ${{ github.event.issue.pull_request && github.event.comment.body == '/맞춤법'}}
     runs-on: ubuntu-latest
     steps:
     - name: "맞춤법 검사"
       uses: jckdotim/korean-grammar-action@v0.2.6
       #uses: heumsi/korean-grammar-action@v0.2.8
-      with:
-        repo-token: ${{ secrets.TOKEN }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
   
   grammar_check_comment:
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/맞춤법'}}
@@ -24,6 +25,6 @@ jobs:
       #uses: jckdotim/korean-grammar-action@v0.2.6
       uses: heumsi/korean-grammar-action@v0.2.8
       env:
-        repo-token: ${{ secrets.TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
 
 
