@@ -1,13 +1,13 @@
 site_name: Sample Tech Blog
 docs_dir: docs/
-site_url: https://techblog.github.io/
+site_url: https://sample-docs.github.io/techblog/
 site_dir: site/
 site_author: Eunjung Kim
 site_description: >-
   This tech blog conveys the journey of developing a simulation platform for the future of mobility.
 
-repo_name: techblog.github.io
-repo_url: https://github.com/sample-docs/techblog.github.io
+repo_name: techblog
+repo_url: https://github.com/sample-docs/techblog/
 remote_branch: gh-pages
 # Copyright
 copyright: Copyright &copy; 2025 <a href="https://github.com/ejkim-author">ejkim-author.</a>
