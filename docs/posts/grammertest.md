@@ -97,14 +97,14 @@ nav:
 ```
 
 #### 일반 설명 블록 
-To use multiple sensors in MORAI SIM: Air, the system specifications below should be satisfied.
+To use multiple sensors in SIM: Air, the system specifications below should be satisfied.
 >  CPU: Intel i7 or higher <br>
   RAM: 32GB  or higher <br>
 >  VGA: RTX 30 series or higher
 >
 
 #### 리스트형 일반 설명 블록 
-To use multiple sensors in MORAI SIM: Air, the system specifications below should be satisfied.
+To use multiple sensors in SIM: Air, the system specifications below should be satisfied.
 > - CPU: Intel i7 or higher <br>
   - RAM: 32GB  or higher <br>
 > - VGA: RTX 30 series or higher

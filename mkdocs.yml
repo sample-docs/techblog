@@ -1,15 +1,15 @@
-site_name: MORAI Tech Blog
+site_name: Sample Tech Blog
 docs_dir: docs/
-site_url: https://morai-techblog.github.io/
+site_url: https://techblog.github.io/
 site_author: Eunjung Kim
 site_description: >-
-  The MORAI tech blogc onveys the journey of developing a simulation platform for the future of mobility.
+  This tech blog conveys the journey of developing a simulation platform for the future of mobility.
 
-# repo_url: https://github.com/morai-techblog/morai-techblog.github.io
+# repo_url: https://github.com/sample-docs/techblog.github.io
 # edit_uri: blob/main/docs/
 
 # Copyright
-copyright: Copyright &copy; 2023 <a href="https://www.morai.ai">MORAI Inc.</a>
+copyright: Copyright &copy; 2025 <a href="https://github.com/ejkim-author">ejkim-author.</a>
 
 theme:
   name: material
@@ -40,7 +40,7 @@ theme:
     - search.suggest
     - toc.follow
     # - toc.integrate 
-  favicon: 'assets/favicon.png'
+  favicon: 'assets/favicon1.png'
   icon:
     logo: logo
 
@@ -67,7 +67,8 @@ theme:
 #    - typeset
 
 plugins:
-  - meta
+  # - meta:
+  #     meta_file: .meta.yml 
   - blog:
       blog_dir: .
       archive: false 
@@ -91,9 +92,9 @@ extra:
     property: !ENV GOOGLE_ANALYTICS_KEY
   social:
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/moraisim
+      link: https://www.youtube.com
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/company/morai/
+      link: https://www.linkedin.com/company
 
 # Extensions
 markdown_extensions:
@@ -112,8 +113,8 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg #!!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji #!!python/name:material.extensions.emoji.twemojii
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span

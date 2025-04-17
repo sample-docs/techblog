@@ -36,13 +36,13 @@ feature 브랜치에 초안 템플릿 파일 `{카테고리}-{기고자명}-{생
 > ⚠️ 아래의 명령 실행에 앞서, Github에 회사 계정으로 접속 후 Personal Access Token(PAT)을 발급해야 합니다.
 > 발급 방법은 [여기](https://docs.github.com/ko/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)를 참조하세요.
 > 
-> 발급받은 PAT로 하여금 [저희의 문서화 Private Repo](https://github.com/morai-techblog/mkdocs-material-insiders)에 대한 접근 권한이 있는지를 인증할 수 있습니다.
+> 발급받은 PAT로 하여금 [저희의 문서화 Private Repo](https://github.com/test-techblog/mkdocs-material-insiders)에 대한 접근 권한이 있는지를 인증할 수 있습니다.
 
 ```
 # 문서 환경을 위한 MkDocs Meterial 및 블로그 라이브러리 [MkDocs Meterial Insider](https://squidfunk.github.io/mkdocs-material/insiders/)설치
 python.exe -m pip install --upgrade pip
 python.exe -m pip install  mkdocs-material
-python.exe -m pip install git+https://{PAT}@github.com/morai-techblog/mkdocs-material-insiders.git
+python.exe -m pip install git+https://{PAT}@github.com/test-techblog/mkdocs-material-insiders.git
 
 # 추가 플러그인 설치
 pip install mkdocs-minify-plugin
@@ -51,7 +51,7 @@ pip install mkdocs-git-authors-plugin
 ```
 
 ### 2. 블로그 리포지터리 및 feature branch 복사 
-`git clone --branch {feature branch} https://github.com/morai-techblog/morai-techblog.github.io.git`
+`git clone --branch {feature branch} https://github.com/sample-docs/techblog.github.io.git`
 
 ### 3. 초안 작성
 초안 작성은 글을 잘 쓴다기 보다는 초안 템플릿의 주요 항목을 채운다는 개념으로 접근하면 쉽습니다.
@@ -62,7 +62,7 @@ pip install mkdocs-git-authors-plugin
 ### 4. 초안 확인
 아래의 명령으로 앞에서 구성한 문서 작업 환경에서 사이트를 빌드하며 웹 형태로 작성된 초안을 검토합니다.
 ```
-cd morai-techblog.github.io
+cd techblog.github.io
 mkdocs serve
 ```
   

@@ -1,7 +1,7 @@
 ---
 # layout: home.html
-title: Welcome to MORAI Tech Blog
+title: Welcome to Tech Blog
 comments: false
 ---
 
-# Welcome to MORAI Tech Blog
+# Welcome to Tech Blog

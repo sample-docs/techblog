@@ -33,7 +33,7 @@ from urllib.parse import urlencode, urlparse
 # Determine missing translations and render language overview in the setup
 # guide, including links to provide missing translations.
 def on_page_markdown(markdown: str, *, page: Page, config: MkDocsConfig, files):
-    issue_url = "https://github.com/morai-techblog/morai-techblog.github.io/issues/new"
+    issue_url = "https://github.com/sample-docs/techblog.github.io/issues/new"
     if page.file.src_uri != "setup/changing-the-language.md":
         return
 
