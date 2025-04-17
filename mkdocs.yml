@@ -1,20 +1,21 @@
 site_name: Sample Tech Blog
 docs_dir: docs/
 site_url: https://techblog.github.io/
+site_dir: site/
 site_author: Eunjung Kim
 site_description: >-
   This tech blog conveys the journey of developing a simulation platform for the future of mobility.
 
-# repo_url: https://github.com/sample-docs/techblog.github.io
-# edit_uri: blob/main/docs/
-
+repo_name: techblog.github.io
+repo_url: https://github.com/sample-docs/techblog.github.io
+remote_branch: gh-pages
 # Copyright
 copyright: Copyright &copy; 2025 <a href="https://github.com/ejkim-author">ejkim-author.</a>
 
 theme:
   name: material
   custom_dir: overrides
-  logo: assets/logo22.png
+  logo: assets/favicon1.png
   features:
     - announce.dismiss
     - content.action.edit
@@ -71,13 +72,28 @@ plugins:
   #     meta_file: .meta.yml 
   - blog:
       blog_dir: .
-      archive: false 
+      archive: false
+      categories_url_format: "category/{slug}"
+      post_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      categories_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+      #categories_sort_by: !!python/name:material.plugins.blog.view_post_count
+      #categories_sort_reverse: true
+      # categories_allowed:
+      #   - Search
+      #   - Performance
+      post_dir: "posts/"
+      post_slugify_separator: "-"
+      post_url_format: "{date}/{file}"
   - search
   - tags:
       tags_file: tags.md
-  - typeset
-  - info:
-      archive_stop_on_violation: false
+  #- typeset
+  # - info:
+  #     archive_stop_on_violation: false
 
 # Hooks
 # hooks:
